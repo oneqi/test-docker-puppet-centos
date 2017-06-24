@@ -123,8 +123,7 @@ Then create a 'template'
 ```docker commit client puppet-template```  
 To create another container from the 'template'  
 ```docker run -it -h puppet-n1 --name puppet-n1 puppet-template /bin/bash```
-or to share your c:\admin directory   
-```docker run -it -v c:/admin:/home/ -h puppet-n2 --name puppet-n2 puppet-template /bin/bash```
+
 
 
 
