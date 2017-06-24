@@ -117,12 +117,15 @@ To log out press CTRL + P + Q
 
 ### Save settings of container as a 'template'
 
-First find out he 'container ID' of the container 'client'  
-```docker ps -a```  
-Then create a 'template' ...  
-```docker commit <container ID of 'client'> puppet-template```  
-To create another container from the 'tempalte' ...  
+First stop the container 'client'     
+```docker stop client```   
+Then create a 'template'  
+```docker commit client puppet-template```  
+To create another container from the 'template'  
 ```docker run -it -h puppet-n1 --name puppet-n1 puppet-template /bin/bash```
+or to share your c:\admin directory   
+```docker run -it -v c:/admin:/home/ -h puppet-n2 --name puppet-n2 puppet-template /bin/bash```
+
 
 
 
